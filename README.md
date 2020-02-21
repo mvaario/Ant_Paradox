@@ -24,9 +24,9 @@ User can change parameters
 Code will show to user time and ant's process when code is running
 After ant made on the other side of the rubber rope code stops
 and prints final result
-- time
-- ant's final position 
-- rubber rope length
+- time (min / sec)
+- ant's final position (meters) 
+- rubber rope length (meters)
 
 ------------------------------
 
