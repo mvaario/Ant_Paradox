@@ -22,6 +22,7 @@ User can change parameters
 - rope acceleration (m/s^2)
 
 Code will show to user time and ant's process when code is running
+
 After ant made on the other side of the rubber rope code stops
 and prints final result
 - time (min / sec)
