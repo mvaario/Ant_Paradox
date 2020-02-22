@@ -31,7 +31,8 @@ and prints final result
 
 ------------------------------
 
-Demonstration video on youtube.com
+Demonstration video on youtube
+
 https://www.youtube.com/watch?v=56XiCV055dY&feature=youtu.be
 
 ------------------------------
