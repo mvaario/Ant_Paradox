@@ -14,13 +14,13 @@ class settings:
         self.ant = 0
 
         # Rope's starting length in meters
-        self.rope = 10
+        self.rope = 4
 
         # ant's moving speed m/s      - light speed = 300 000 km/s
         self.ant_speed = 1
 
         # Rope's extending speed m/s  - universe expanding speed = 73 km/s
-        self.rope_speed = 100
+        self.rope_speed = 2
 
         # Rope's acceleration m/s^2
         self.rope_acceleration = 0
@@ -35,6 +35,7 @@ class settings:
         self.full_sec = 0
         # Wait time
         self.time = 0
+        self.kk = 0
 
         return
 
@@ -74,31 +75,34 @@ class settings:
 
     # for printing times
     def time(i):
-        if i < 60:
-            time.sleep(game.time)
-        elif i < 1200:
-            time.sleep(game.time / 100)
-
-        if i < 60:
-            print(i, "s - ", round(game.ant_pro,2) , "%")
-            game.sec = i
-        else:
-            min = i / 60
-            sec = (i - (60 * math.floor(min)))/ 10
-            sec = math.floor(sec)
-            sec = sec * 10
-            min = math.floor(min)
-
-
-            if game.sec != sec or game.min != min:
-                if sec == 0:
-                    print(min, "min", sec,"", "sec", "- ", round(game.ant_pro, 2), "%")
-                else:
-                    print(min, "min", sec, "sec", "- ", round(game.ant_pro, 2), "%")
-            game.sec = sec
-            game.min = min
-
         game.full_sec = game.full_sec + 1
+        # if i < 60:
+        #     time.sleep(game.time)
+        # elif i < 1200:
+        #     time.sleep(game.time / 100)
+        #
+        # if i < 60:
+        #     print(i, "s - ", round(game.ant_pro,2) , "%")
+        #     game.sec = i
+        # else:
+        #     min = i / 60
+        #     sec = (i - (60 * math.floor(min)))/ 10
+        #     sec = math.floor(sec)
+        #     sec = sec * 10
+        #     min = math.floor(min)
+        #
+        #
+        #     if game.sec != sec or game.min != min:
+        #         if sec == 0:
+        #             print(min, "min", sec,"", "sec", "- ", round(game.ant_pro, 2), "%")
+        #         # else:
+        #         #     print(min, "min", sec, "sec", "- ", round(game.ant_pro, 2), "%")
+        #     game.sec = sec
+        #     game.min = min
+
+        if i % 259200 == 0:
+            game.kk = game.kk + 1
+
 
 
         return
@@ -106,20 +110,14 @@ class settings:
     # Calculations
     def cal():
 
-        dis = 10
-        ant_speed = 1
-        rope_speed = 10
-        acc = 0
+        c = 10
+        a = 1
+        v = 1
+        k = game.full_sec
 
-
-        # dis * ant_speed * t = dis * t * rope_speed * acc
-        t = game.full_sec
-        ant = dis * ant_speed * t
-        rope = dis * rope_speed * t
-
-        print("")
-        print(ant)
-        print(rope)
+        l = a / (c+v) * (1/k)
+        # print(game.full_sec)
+        print(l)
 
 
 
@@ -131,7 +129,6 @@ if __name__ == '__main__':
     last_time = time.time()
     i = 0
     F = 0
-    kk = 0
     print("Starting")
     print("---------------")
     print("Time - Process")
@@ -140,12 +137,10 @@ if __name__ == '__main__':
         i = i + 1
         settings.start()
         F = game.ant_pro
-        if i % 2592000 == 0:
-            settings.time(i)
-            kk = kk + 1
+        settings.time(i)
 
-    settings.time(i)
-    settings.cal()
+
+    # settings.cal()
     # Final results
     # time.sleep(0.2)
     print("")
@@ -155,6 +150,7 @@ if __name__ == '__main__':
     print("Ant final position", round(game.ant, 2), " m")
     print("Ant moved ", round(game.ant_speed * game.full_sec), "m")
     print("Rope final length", round(game.rope, 2), " m")
-    print("Kuukausia ", kk)
+    print("Kuukausia ", game.kk)
+    print(game.full_sec)
 
 
