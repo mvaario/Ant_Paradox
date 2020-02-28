@@ -8,6 +8,7 @@ import time
 import math
 from math import e
 
+# Final data
 def final():
     print("")
     print("Done, final data")
@@ -23,6 +24,7 @@ def final():
 
     return
 
+# Final time
 def final_times():
     time = game.t
     if time > 2592000:
@@ -89,11 +91,12 @@ class settings:
         game.ant = game.ant + game.ant_speed / (10 ** game.acc)
 
         # rope new length
-        settings.rub_leinght()
+        settings.rub_lenght()
 
         return
 
-    def rub_leinght():
+    # Rubber rope length
+    def rub_lenght():
 
         # and process
         game.ant_process()
@@ -108,6 +111,7 @@ class settings:
 
         return
 
+    # Ant process in percentages
     def ant_process(self):
         # ant process
         game.ant_pro = 100 / game.rope * game.ant
@@ -149,7 +153,7 @@ class settings:
         game.i = t
 
         return
-
+    # Times days / kk
     def print_days(i):
         if i % 1 == 0 and i < 30:
             print(round(i), "days -", round(game.ant_pro, 2), "%")
