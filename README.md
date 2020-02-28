@@ -21,6 +21,7 @@ User can change parameters
 - rope extending speed (m/s)
 - rope acceleration (m/s^2)
 
+- added accurate (10^acc / sec)
 - added calculations
 
 Code will show to user time and ant's process when code is running
@@ -30,6 +31,8 @@ and prints final result
 - time (min / sec)
 - ant's final position (meters) 
 - rubber rope length (meters)
+
+- calculated results
 
 ------------------------------
 
