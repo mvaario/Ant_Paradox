@@ -2,7 +2,7 @@ Ant on the rubber rope paradox
 
 ------------------------------
 
-Project intent to make to demonstrate ant on the rubber rope paradox
+Project intent to demonstrate ant on the rubber rope paradox
 
 ------------------------------
 
@@ -12,7 +12,7 @@ What if the rubber rope extending speed is accelerating?
 
 ------------------------------
 
-Main.py
+mainv2.py
 
 User can change parameters
 - ant starting position
@@ -20,6 +20,8 @@ User can change parameters
 - ant's moving speed (m/s)
 - rope extending speed (m/s)
 - rope acceleration (m/s^2)
+
+- added calculations
 
 Code will show to user time and ant's process when code is running
 
@@ -31,7 +33,7 @@ and prints final result
 
 ------------------------------
 
-Demonstration video on youtube
+Old demonstration video of Main.py on youtube
 
 https://www.youtube.com/watch?v=8O3RImCp-NE&feature=youtu.be
 
