@@ -54,7 +54,7 @@ def final_times():
 class settings:
     def __init__(self):
         #  Accurate, 1, 2, 3, aka 10^acc / sec accurate -- how many decimals
-        self.acc = 3
+        self.acc = 5
 
         # Ant's starting position in meters
         self.ant = 0
@@ -77,7 +77,7 @@ class settings:
         # times
         self.t = 0
         # sleep
-        self.sleep = 0.05
+        self.sleep = 0.5
         # calculated
         self.cal = 0
 
@@ -122,21 +122,27 @@ class settings:
     def print():
         i = round(game.t)
         t = round(game.t)
+        if game.acc > 4:
+            sleep = 0
+        elif game.acc != 0:
+            sleep = game.sleep / game.acc
+        else:
+            sleep = game.sleep
 
         if game.i != t:
             if i < 86400 and game.print == 1:
                 if i < 10:
-                    time.sleep(game.sleep)
+                    time.sleep(sleep)
                     print(t, "sec -", round(game.ant_pro, 2), "%")
                 if i % 10 == 0 and i < 60:
-                    time.sleep(game.sleep)
+                    time.sleep(sleep)
                     print(t, "sec -", round(game.ant_pro, 2), "%")
 
                 if i % 60 == 0 and i < 600:
-                    time.sleep(game.sleep)
+                    time.sleep(sleep)
                     print(round(t / 60), "min -", round(game.ant_pro, 2), "%")
                 elif i % 600 == 0 and i < 3600:
-                    time.sleep(game.sleep)
+                    time.sleep(sleep)
                     print(round(t / 60), "min -", round(game.ant_pro, 2), "%")
 
                 i = i / 60
