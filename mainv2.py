@@ -1,7 +1,6 @@
 # Ant on rubber rope paradox
 # How can ant reach end of the rope, if the rope is extending
 # "Increasing the distance by more than his progress"
-# Inspired by Vsauce2
 # Made by mvaario
 
 import time
